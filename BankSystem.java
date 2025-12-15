@@ -147,4 +147,3 @@ class User{
         sc.close();
     }
 }
-
