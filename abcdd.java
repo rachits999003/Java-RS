@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class abcd{
+public class abcdd{
     public static void main(String[] args) {
         ArrayList<String> ar = new ArrayList<String>();
         Scanner sc = new Scanner(System.in);
