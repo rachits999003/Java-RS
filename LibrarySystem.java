@@ -209,34 +209,44 @@ public class LibrarySystem {
         books.add(b8);
 
         System.out.println("Welcome to BookBhandar!");
-        System.out.println("What would you like to do today?");
-        System.out.println("---------------------------------");
-        System.out.println("1. Login");
-        System.out.println("2. Sign up");
-        System.out.print("Enter your choice: ");
 
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        sc.nextLine(); // Consume newline
-        
-        switch (choice) {
-            case 1:
-                System.out.print("Enter username: ");
-                String un = sc.nextLine();
-                System.out.print("Enter password: ");
-                String pw = sc.nextLine();
-                login(un, pw, sc);
-                break;
-            case 2:
-                System.out.print("Enter username: ");
-                un = sc.nextLine();
-                System.out.print("Enter password: ");
-                pw = sc.nextLine();
-                signUp(un, pw);
-                break;
-            default:
-                System.out.println("Invalid input!");
-                break;
+        boolean appRunning = true;
+
+        while (appRunning) {
+            System.out.println("\nWhat would you like to do today?");
+            System.out.println("---------------------------------");
+            System.out.println("1. Login");
+            System.out.println("2. Sign up");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine(); // Consume newline
+            
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter username: ");
+                    String un = sc.nextLine();
+                    System.out.print("Enter password: ");
+                    String pw = sc.nextLine();
+                    login(un, pw, sc);
+                    break;
+                case 2:
+                    System.out.print("Enter username: ");
+                    un = sc.nextLine();
+                    System.out.print("Enter password: ");
+                    pw = sc.nextLine();
+                    signUp(un, pw);
+                    break;
+                case 3:
+                    System.out.println("Thank you for using BookBhandar! Goodbye!");
+                    appRunning = false;
+                    break;
+                default:
+                    System.out.println("Invalid input! Please try again.");
+                    break;
+            }
         }
 
         sc.close();
